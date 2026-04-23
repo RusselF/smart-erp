@@ -135,7 +135,7 @@ export function InventoryClient({ initialProducts, categories, currentPage, sear
                   <TableCell>{product.name}</TableCell>
                   <TableCell>{product.category?.name || '-'}</TableCell>
                   <TableCell className="text-right">
-                    ${product.price.toLocaleString()}
+                    Rp {product.price.toLocaleString('id-ID')}
                   </TableCell>
                   <TableCell className={cn(
                     "text-right font-medium",

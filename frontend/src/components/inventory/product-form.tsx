@@ -128,7 +128,7 @@ export function ProductForm({ initialData, categories, onSuccess }: ProductFormP
           render={({ field }) => (
             <FormItem>
               <FormLabel>Category</FormLabel>
-              <Select disabled={isLoading} onValueChange={field.onChange} defaultValue={field.value}>
+              <Select disabled={isLoading} onValueChange={field.onChange} value={field.value}>
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Select a category" />

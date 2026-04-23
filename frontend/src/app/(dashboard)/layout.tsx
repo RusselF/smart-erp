@@ -12,7 +12,7 @@ export default async function DashboardLayout({
   return (
     <div className="min-h-screen relative bg-slate-50">
       <div className="hidden min-h-screen md:flex md:w-72 md:flex-col md:fixed md:inset-y-0 z-[80] bg-white">
-        <Sidebar />
+        <Sidebar userRole={user?.role} />
       </div>
       <main className="md:pl-72 flex flex-col min-h-screen">
         <Topbar user={user} />

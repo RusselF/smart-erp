@@ -2,7 +2,7 @@
 
 import { cookies } from 'next/headers'
 
-const API_URL = 'http://localhost:3001'
+const API_URL = 'http://127.0.0.1:3001'
 
 async function getHeaders() {
   const cookieStore = await cookies()
