@@ -30,11 +30,11 @@ export declare class OrdersService {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        orderNumber: string;
         customerName: string | null;
+        paymentMethod: string;
+        orderNumber: string;
         totalAmount: number;
         status: import(".prisma/client").$Enums.OrderStatus;
-        paymentMethod: string;
         userId: string | null;
     }>;
     findAll(page?: number, limit?: number, search?: string): Promise<{
@@ -42,11 +42,11 @@ export declare class OrdersService {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            orderNumber: string;
             customerName: string | null;
+            paymentMethod: string;
+            orderNumber: string;
             totalAmount: number;
             status: import(".prisma/client").$Enums.OrderStatus;
-            paymentMethod: string;
             userId: string | null;
         }[];
         meta: {
@@ -87,11 +87,11 @@ export declare class OrdersService {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        orderNumber: string;
         customerName: string | null;
+        paymentMethod: string;
+        orderNumber: string;
         totalAmount: number;
         status: import(".prisma/client").$Enums.OrderStatus;
-        paymentMethod: string;
         userId: string | null;
     }>;
 }

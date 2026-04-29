@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { LayoutDashboard, Package, ShoppingCart, Users, Settings, Store, LogOut } from 'lucide-react'
+import { LayoutDashboard, Package, ShoppingCart, Users, Settings, Store, LogOut, Truck, ClipboardList } from 'lucide-react'
 import { logoutAction } from '@/actions/auth'
 
 const routes = [
@@ -37,6 +37,20 @@ const routes = [
     icon: Users,
     href: '/users',
     color: 'text-emerald-500',
+    restricted: true,
+  },
+  {
+    label: 'Suppliers',
+    icon: Truck,
+    href: '/suppliers',
+    color: 'text-teal-500',
+    restricted: true,
+  },
+  {
+    label: 'Purchasing',
+    icon: ClipboardList,
+    href: '/purchasing',
+    color: 'text-cyan-600',
     restricted: true,
   },
   {

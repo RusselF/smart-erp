@@ -5,13 +5,13 @@ export declare class ProductsController {
     constructor(productsService: ProductsService);
     create(createProductDto: Prisma.ProductUncheckedCreateInput): Promise<{
         id: string;
-        sku: string;
         name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        sku: string;
         description: string | null;
         price: number;
         stock: number;
-        createdAt: Date;
-        updatedAt: Date;
         categoryId: string | null;
     }>;
     findAll(page?: string, limit?: string, search?: string, categoryId?: string): Promise<{
@@ -24,13 +24,13 @@ export declare class ProductsController {
             } | null;
         } & {
             id: string;
-            sku: string;
             name: string;
+            createdAt: Date;
+            updatedAt: Date;
+            sku: string;
             description: string | null;
             price: number;
             stock: number;
-            createdAt: Date;
-            updatedAt: Date;
             categoryId: string | null;
         })[];
         meta: {
@@ -49,35 +49,35 @@ export declare class ProductsController {
         } | null;
     } & {
         id: string;
-        sku: string;
         name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        sku: string;
         description: string | null;
         price: number;
         stock: number;
-        createdAt: Date;
-        updatedAt: Date;
         categoryId: string | null;
     }) | null, null, import("@prisma/client/runtime/library").DefaultArgs>;
     update(id: string, updateProductDto: Prisma.ProductUncheckedUpdateInput): Prisma.Prisma__ProductClient<{
         id: string;
-        sku: string;
         name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        sku: string;
         description: string | null;
         price: number;
         stock: number;
-        createdAt: Date;
-        updatedAt: Date;
         categoryId: string | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs>;
     remove(id: string): Prisma.Prisma__ProductClient<{
         id: string;
-        sku: string;
         name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        sku: string;
         description: string | null;
         price: number;
         stock: number;
-        createdAt: Date;
-        updatedAt: Date;
         categoryId: string | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs>;
 }
