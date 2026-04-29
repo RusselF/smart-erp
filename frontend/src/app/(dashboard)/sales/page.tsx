@@ -39,7 +39,7 @@ export default async function SalesPage() {
                 orders.map((order: any) => (
                   <TableRow key={order.id}>
                     <TableCell className="font-medium">{order.orderNumber}</TableCell>
-                    <TableCell>{new Date(order.createdAt).toLocaleString()}</TableCell>
+                    <TableCell>{new Date(order.createdAt).toLocaleDateString('id-ID')}</TableCell>
                     <TableCell>{order.customerName || 'Walk-in Customer'}</TableCell>
                     <TableCell className="font-bold">Rp {order.totalAmount.toLocaleString('id-ID')}</TableCell>
                     <TableCell>

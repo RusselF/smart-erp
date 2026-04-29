@@ -25,7 +25,7 @@ export function DashboardClient({ stats }: { stats: any }) {
         Overview of your business operations.
       </p>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Card className="shadow-sm border-primary/10 hover:shadow-md transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
@@ -82,6 +82,36 @@ export function DashboardClient({ stats }: { stats: any }) {
             <div className={`text-2xl font-bold ${lowStockCount > 0 ? 'text-amber-600' : 'text-slate-800'}`}>{lowStockCount}</div>
             <p className="text-xs text-muted-foreground mt-1">
               Products with stock &lt; 10
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="shadow-sm border-primary/10 hover:shadow-md transition-shadow">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Total Purchases</CardTitle>
+            <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+              <Package className="h-4 w-4 text-blue-600" />
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold text-slate-800">Rp {(stats.totalPurchases || 0).toLocaleString('id-ID')}</div>
+            <p className="text-xs text-muted-foreground mt-1">
+              Total inventory cost
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="shadow-sm border-primary/10 hover:shadow-md transition-shadow">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Pending PO</CardTitle>
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${stats.pendingPurchaseOrders > 0 ? 'bg-orange-100' : 'bg-slate-100'}`}>
+              <AlertTriangle className={`h-4 w-4 ${stats.pendingPurchaseOrders > 0 ? 'text-orange-600' : 'text-slate-400'}`} />
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className={`text-2xl font-bold ${stats.pendingPurchaseOrders > 0 ? 'text-orange-600' : 'text-slate-800'}`}>{stats.pendingPurchaseOrders || 0}</div>
+            <p className="text-xs text-muted-foreground mt-1">
+              DRAFT Purchase Orders
             </p>
           </CardContent>
         </Card>

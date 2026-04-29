@@ -73,13 +73,23 @@ let DashboardService = class DashboardService {
                 revenue
             };
         });
+        const purchasingResult = await this.prisma.purchaseOrder.aggregate({
+            _sum: { totalAmount: true },
+            where: { status: 'RECEIVED' }
+        });
+        const totalPurchases = purchasingResult._sum.totalAmount || 0;
+        const pendingPurchaseOrders = await this.prisma.purchaseOrder.count({
+            where: { status: 'DRAFT' }
+        });
         return {
             totalRevenue,
             salesCount,
             productsInStock,
             lowStockCount,
             recentOrders,
-            revenueData
+            revenueData,
+            totalPurchases,
+            pendingPurchaseOrders
         };
     }
 };

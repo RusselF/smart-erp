@@ -30,9 +30,9 @@ export declare class PurchasesController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            productId: string;
             quantity: number;
             subtotal: number;
+            productId: string;
             unitCost: number;
             purchaseOrderId: string;
         })[];
@@ -43,9 +43,9 @@ export declare class PurchasesController {
         totalAmount: number;
         status: import(".prisma/client").$Enums.PurchaseStatus;
         userId: string | null;
-        supplierId: string;
-        notes: string | null;
         poNumber: string;
+        notes: string | null;
+        supplierId: string;
     }>;
     findAll(page?: string, limit?: string): Promise<{
         data: ({
@@ -72,9 +72,9 @@ export declare class PurchasesController {
             totalAmount: number;
             status: import(".prisma/client").$Enums.PurchaseStatus;
             userId: string | null;
-            supplierId: string;
-            notes: string | null;
             poNumber: string;
+            notes: string | null;
+            supplierId: string;
         })[];
         meta: {
             total: number;
@@ -113,9 +113,9 @@ export declare class PurchasesController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            productId: string;
             quantity: number;
             subtotal: number;
+            productId: string;
             unitCost: number;
             purchaseOrderId: string;
         })[];
@@ -126,9 +126,9 @@ export declare class PurchasesController {
         totalAmount: number;
         status: import(".prisma/client").$Enums.PurchaseStatus;
         userId: string | null;
-        supplierId: string;
-        notes: string | null;
         poNumber: string;
+        notes: string | null;
+        supplierId: string;
     }>;
     receive(id: string): Promise<{
         supplier: {
@@ -157,9 +157,9 @@ export declare class PurchasesController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            productId: string;
             quantity: number;
             subtotal: number;
+            productId: string;
             unitCost: number;
             purchaseOrderId: string;
         })[];
@@ -170,9 +170,9 @@ export declare class PurchasesController {
         totalAmount: number;
         status: import(".prisma/client").$Enums.PurchaseStatus;
         userId: string | null;
-        supplierId: string;
-        notes: string | null;
         poNumber: string;
+        notes: string | null;
+        supplierId: string;
     }>;
     cancel(id: string): Promise<{
         id: string;
@@ -181,8 +181,8 @@ export declare class PurchasesController {
         totalAmount: number;
         status: import(".prisma/client").$Enums.PurchaseStatus;
         userId: string | null;
-        supplierId: string;
-        notes: string | null;
         poNumber: string;
+        notes: string | null;
+        supplierId: string;
     }>;
 }

@@ -20,10 +20,10 @@ export declare class OrdersService {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            productId: string;
             quantity: number;
             unitPrice: number;
             subtotal: number;
+            productId: string;
             orderId: string;
         })[];
     } & {
@@ -77,10 +77,10 @@ export declare class OrdersService {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            productId: string;
             quantity: number;
             unitPrice: number;
             subtotal: number;
+            productId: string;
             orderId: string;
         })[];
     } & {

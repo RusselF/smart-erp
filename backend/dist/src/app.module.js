@@ -19,12 +19,15 @@ const orders_module_1 = require("./orders/orders.module");
 const dashboard_module_1 = require("./dashboard/dashboard.module");
 const suppliers_module_1 = require("./suppliers/suppliers.module");
 const purchases_module_1 = require("./purchases/purchases.module");
+const settings_module_1 = require("./settings/settings.module");
+const expenses_module_1 = require("./expenses/expenses.module");
+const reports_module_1 = require("./reports/reports.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [prisma_module_1.PrismaModule, users_module_1.UsersModule, auth_module_1.AuthModule, categories_module_1.CategoriesModule, products_module_1.ProductsModule, orders_module_1.OrdersModule, dashboard_module_1.DashboardModule, suppliers_module_1.SuppliersModule, purchases_module_1.PurchasesModule],
+        imports: [prisma_module_1.PrismaModule, users_module_1.UsersModule, auth_module_1.AuthModule, categories_module_1.CategoriesModule, products_module_1.ProductsModule, orders_module_1.OrdersModule, dashboard_module_1.DashboardModule, suppliers_module_1.SuppliersModule, purchases_module_1.PurchasesModule, settings_module_1.SettingsModule, expenses_module_1.ExpensesModule, reports_module_1.ReportsModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

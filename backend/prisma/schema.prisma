@@ -21,6 +21,7 @@ model User {
   role           Role            @default(STAFF)
   orders         Order[]
   purchaseOrders PurchaseOrder[]
+  expenses       Expense[]
   createdAt      DateTime        @default(now())
   updatedAt      DateTime        @updatedAt
 }
@@ -127,4 +128,35 @@ model PurchaseOrderItem {
   subtotal        Float
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
+}
+
+// ==================== SETTINGS ====================
+
+model Setting {
+  id    String @id @default(uuid())
+  key   String @unique
+  value String
+}
+
+// ==================== EXPENSES ====================
+
+model ExpenseCategory {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  expenses  Expense[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Expense {
+  id          String          @id @default(uuid())
+  amount      Float
+  description String
+  date        DateTime        @default(now())
+  categoryId  String
+  category    ExpenseCategory @relation(fields: [categoryId], references: [id])
+  userId      String?
+  user        User?           @relation(fields: [userId], references: [id])
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
 }

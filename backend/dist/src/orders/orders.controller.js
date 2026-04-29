@@ -22,7 +22,7 @@ let OrdersController = class OrdersController {
         this.ordersService = ordersService;
     }
     create(createOrderDto, req) {
-        return this.ordersService.create(createOrderDto, req.user?.userId);
+        return this.ordersService.create(createOrderDto, req.user?.id);
     }
     findAll(page, limit, search) {
         return this.ordersService.findAll(page ? +page : 1, limit ? +limit : 10, search);

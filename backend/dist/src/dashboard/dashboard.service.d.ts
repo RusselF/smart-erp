@@ -12,26 +12,28 @@ export declare class DashboardService {
                 id: string;
                 createdAt: Date;
                 updatedAt: Date;
+                orderId: string;
                 productId: string;
                 quantity: number;
                 unitPrice: number;
                 subtotal: number;
-                orderId: string;
             }[];
         } & {
-            id: string;
-            createdAt: Date;
-            updatedAt: Date;
-            customerName: string | null;
-            paymentMethod: string;
-            orderNumber: string;
             totalAmount: number;
             status: import(".prisma/client").$Enums.OrderStatus;
+            id: string;
+            orderNumber: string;
+            customerName: string | null;
+            paymentMethod: string;
             userId: string | null;
+            createdAt: Date;
+            updatedAt: Date;
         })[];
         revenueData: {
             name: string;
             revenue: number;
         }[];
+        totalPurchases: number;
+        pendingPurchaseOrders: number;
     }>;
 }
