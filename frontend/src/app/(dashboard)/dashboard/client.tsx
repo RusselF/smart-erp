@@ -125,7 +125,7 @@ export function DashboardClient({ stats }: { stats: any }) {
           </CardHeader>
           <CardContent className="pl-2">
             <div className="h-[300px] w-full mt-4" style={{ minWidth: 0, minHeight: 0 }}>
-              <ResponsiveContainer width="100%" height="100%" minWidth={200} minHeight={200}>
+              <ResponsiveContainer width="99%" height="100%">
                 <LineChart data={revenueData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                   <XAxis 

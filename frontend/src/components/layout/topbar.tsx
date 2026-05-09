@@ -1,7 +1,7 @@
 'use client'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuGroup, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { Menu, LogOut, User } from 'lucide-react'
 import { logoutAction } from '@/actions/auth'
@@ -40,17 +40,19 @@ export function Topbar({ user }: TopbarProps) {
             </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56" align="end">
-            <DropdownMenuLabel className="font-normal">
-              <div className="flex flex-col space-y-1">
-                <p className="text-sm font-medium leading-none">{user?.name || 'User'}</p>
-                <p className="text-xs leading-none text-muted-foreground">
-                  {user?.email || 'user@example.com'}
-                </p>
-                <div className="mt-2 text-[10px] uppercase font-bold tracking-wider text-primary">
-                  {user?.role || 'Role'}
+            <DropdownMenuGroup>
+              <DropdownMenuLabel className="font-normal">
+                <div className="flex flex-col space-y-1">
+                  <p className="text-sm font-medium leading-none">{user?.name || 'User'}</p>
+                  <p className="text-xs leading-none text-muted-foreground">
+                    {user?.email || 'user@example.com'}
+                  </p>
+                  <div className="mt-2 text-[10px] uppercase font-bold tracking-wider text-primary">
+                    {user?.role || 'Role'}
+                  </div>
                 </div>
-              </div>
-            </DropdownMenuLabel>
+              </DropdownMenuLabel>
+            </DropdownMenuGroup>
             <DropdownMenuItem onClick={() => router.push('/profile')} className="cursor-pointer">
               <User className="mr-2 h-4 w-4" />
               <span>My Profile</span>
