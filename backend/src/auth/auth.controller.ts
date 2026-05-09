@@ -29,6 +29,6 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Patch('profile')
   updateProfile(@Request() req: any, @Body() body: any) {
-    return this.usersService.update(req.user.sub, body);
+    return this.usersService.update(req.user.id, body);
   }
 }

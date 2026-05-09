@@ -33,7 +33,7 @@ let AuthController = class AuthController {
         return req.user;
     }
     updateProfile(req, body) {
-        return this.usersService.update(req.user.sub, body);
+        return this.usersService.update(req.user.id, body);
     }
 };
 exports.AuthController = AuthController;
