@@ -221,7 +221,7 @@ export function ExpensesClient({ initialExpenses, initialCategories }: any) {
             </div>
             <div className="space-y-2">
               <Label>Category</Label>
-              <Select value={categoryId} onValueChange={setCategoryId} required>
+              <Select value={categoryId} onValueChange={(val) => setCategoryId(val || '')} required>
                 <SelectTrigger>
                   <SelectValue placeholder="Select category">
                     {categoryId 
