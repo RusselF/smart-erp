@@ -65,3 +65,29 @@ export async function getMeAction() {
   }
 }
 
+export async function updateProfileAction(data: any) {
+  const cookieStore = await cookies()
+  const token = cookieStore.get('token')?.value
+
+  if (!token) return { error: 'Unauthorized' }
+
+  try {
+    const res = await fetch('http://127.0.0.1:3001/auth/profile', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(data)
+    })
+
+    if (!res.ok) {
+      const errorData = await res.json()
+      return { error: errorData.message || 'Failed to update profile' }
+    }
+
+    return { success: true }
+  } catch (error: any) {
+    return { error: error.message }
+  }
+}

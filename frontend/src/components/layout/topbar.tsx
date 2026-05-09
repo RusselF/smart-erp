@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
-import { Menu, LogOut } from 'lucide-react'
+import { Menu, LogOut, User } from 'lucide-react'
 import { logoutAction } from '@/actions/auth'
 import { useRouter } from 'next/navigation'
 
@@ -51,6 +51,10 @@ export function Topbar({ user }: TopbarProps) {
                 </div>
               </div>
             </DropdownMenuLabel>
+            <DropdownMenuItem onClick={() => router.push('/profile')} className="cursor-pointer">
+              <User className="mr-2 h-4 w-4" />
+              <span>My Profile</span>
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-600 focus:text-red-600">
               <LogOut className="mr-2 h-4 w-4" />
