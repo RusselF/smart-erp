@@ -223,7 +223,11 @@ export function ExpensesClient({ initialExpenses, initialCategories }: any) {
               <Label>Category</Label>
               <Select value={categoryId} onValueChange={setCategoryId} required>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select category" />
+                  <SelectValue placeholder="Select category">
+                    {categoryId 
+                      ? categories.find((c: any) => c.id === categoryId)?.name 
+                      : "Select category"}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((c: any) => (
