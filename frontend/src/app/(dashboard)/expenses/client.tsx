@@ -17,8 +17,8 @@ export function ExpensesClient({ initialExpenses, initialCategories }: any) {
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  const [expenses, setExpenses] = useState(initialExpenses.data || [])
-  const [categories, setCategories] = useState(initialCategories || [])
+  const expenses = initialExpenses?.data || []
+  const categories = initialCategories || []
   
   const [isExpenseDialogOpen, setIsExpenseDialogOpen] = useState(false)
   const [isCategoryDialogOpen, setIsCategoryDialogOpen] = useState(false)

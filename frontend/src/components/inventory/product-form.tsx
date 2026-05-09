@@ -133,7 +133,11 @@ export function ProductForm({ initialData, categories, onSuccess }: ProductFormP
               <Select disabled={isLoading} onValueChange={field.onChange} value={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a category" />
+                    <SelectValue placeholder="Select a category">
+                      {field.value 
+                        ? categories.find(c => c.id === field.value)?.name 
+                        : "Select a category"}
+                    </SelectValue>
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
