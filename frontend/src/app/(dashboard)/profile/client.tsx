@@ -13,7 +13,7 @@ import { updateProfileAction } from '@/actions/auth'
 export function ProfileClient({ user }: { user: any }) {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
-  const [name, setName] = useState(user.name)
+  const [name, setName] = useState(user?.name || '')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 
@@ -66,7 +66,7 @@ export function ProfileClient({ user }: { user: any }) {
                 <Label>Email Address</Label>
                 <div className="relative">
                   <Mail className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-500" />
-                  <Input value={user.email} disabled className="pl-9 bg-slate-50 text-slate-500" />
+                  <Input value={user?.email || ''} disabled className="pl-9 bg-slate-50 text-slate-500" />
                 </div>
                 <p className="text-xs text-muted-foreground">Email cannot be changed.</p>
               </div>
@@ -74,7 +74,7 @@ export function ProfileClient({ user }: { user: any }) {
                 <Label>System Role</Label>
                 <div className="relative">
                   <ShieldAlert className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-500" />
-                  <Input value={user.role} disabled className="pl-9 bg-slate-50 text-slate-500 font-semibold" />
+                  <Input value={user?.role || ''} disabled className="pl-9 bg-slate-50 text-slate-500 font-semibold" />
                 </div>
                 <p className="text-xs text-muted-foreground">Your access level in the system.</p>
               </div>
