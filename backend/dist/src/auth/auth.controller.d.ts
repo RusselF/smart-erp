@@ -13,11 +13,11 @@ export declare class AuthController {
             role: any;
         };
     }>;
-    getProfile(req: any): any;
+    getProfile(req: any): Promise<any>;
     updateProfile(req: any, body: any): Promise<{
+        name: string;
         id: string;
         email: string;
-        name: string;
         role: import(".prisma/client").$Enums.Role;
         createdAt: Date;
         updatedAt: Date;
