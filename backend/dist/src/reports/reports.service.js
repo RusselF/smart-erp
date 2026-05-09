@@ -17,20 +17,18 @@ let ReportsService = class ReportsService {
         this.prisma = prisma;
     }
     async getProfitLoss(startDate, endDate) {
-        let dateFilter = {};
+        let dateFilter = undefined;
         if (startDate && endDate) {
             dateFilter = {
-                createdAt: {
-                    gte: new Date(startDate),
-                    lte: new Date(endDate + 'T23:59:59.999Z'),
-                }
+                gte: new Date(startDate),
+                lte: new Date(endDate + 'T23:59:59.999Z'),
             };
         }
         const revenueResult = await this.prisma.order.aggregate({
             _sum: { totalAmount: true },
             where: {
                 status: 'COMPLETED',
-                ...(startDate && endDate ? { createdAt: dateFilter['createdAt'] } : {}),
+                ...(dateFilter ? { createdAt: dateFilter } : {}),
             }
         });
         const totalRevenue = revenueResult._sum.totalAmount || 0;
@@ -38,7 +36,7 @@ let ReportsService = class ReportsService {
             _sum: { totalAmount: true },
             where: {
                 status: 'RECEIVED',
-                ...(startDate && endDate ? { createdAt: dateFilter['createdAt'] } : {}),
+                ...(dateFilter ? { createdAt: dateFilter } : {}),
             }
         });
         const totalPurchases = purchasesResult._sum.totalAmount || 0;

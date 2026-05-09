@@ -16,6 +16,7 @@ export declare class ProductsService {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;
@@ -35,6 +36,7 @@ export declare class ProductsService {
             updatedAt: Date;
             sku: string;
             description: string | null;
+            imageUrl: string | null;
             price: number;
             stock: number;
             categoryId: string | null;
@@ -60,6 +62,7 @@ export declare class ProductsService {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;
@@ -71,6 +74,7 @@ export declare class ProductsService {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;
@@ -82,6 +86,7 @@ export declare class ProductsService {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;

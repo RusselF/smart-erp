@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { Plus, Search, Edit2, Trash2 } from 'lucide-react'
+import { Plus, Search, Edit2, Trash2, Package } from 'lucide-react'
 import { ProductForm } from '@/components/inventory/product-form'
 import { deleteProductAction } from '@/actions/inventory'
 import { toast } from 'sonner'
@@ -113,6 +113,7 @@ export function InventoryClient({ initialProducts, categories, currentPage, sear
         <Table>
           <TableHeader>
             <TableRow>
+              <TableHead className="w-[60px]">Image</TableHead>
               <TableHead>SKU</TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Category</TableHead>
@@ -131,6 +132,17 @@ export function InventoryClient({ initialProducts, categories, currentPage, sear
             ) : (
               initialProducts.data.map((product: any) => (
                 <TableRow key={product.id}>
+                  <TableCell>
+                    {product.imageUrl ? (
+                      <div className="w-10 h-10 rounded overflow-hidden border bg-slate-50 flex items-center justify-center">
+                        <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover" />
+                      </div>
+                    ) : (
+                      <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-400">
+                        <Package className="h-5 w-5" />
+                      </div>
+                    )}
+                  </TableCell>
                   <TableCell className="font-medium">{product.sku}</TableCell>
                   <TableCell>{product.name}</TableCell>
                   <TableCell>{product.category?.name || '-'}</TableCell>

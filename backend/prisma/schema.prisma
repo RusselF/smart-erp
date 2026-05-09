@@ -39,6 +39,7 @@ model Product {
   sku                String               @unique
   name               String
   description        String?
+  imageUrl           String?
   price              Float
   stock              Int                  @default(0)
   categoryId         String?

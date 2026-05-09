@@ -25,6 +25,7 @@ const formSchema = z.object({
   price: z.coerce.number().min(0, 'Price must be greater than or equal to 0'),
   stock: z.coerce.number().min(0, 'Stock must be greater than or equal to 0'),
   categoryId: z.string().optional(),
+  imageUrl: z.string().url('Must be a valid URL').optional().or(z.literal('')),
 })
 
 interface ProductFormProps {
@@ -44,6 +45,7 @@ export function ProductForm({ initialData, categories, onSuccess }: ProductFormP
       price: initialData?.price || 0,
       stock: initialData?.stock || 0,
       categoryId: initialData?.categoryId || '',
+      imageUrl: initialData?.imageUrl || '',
     },
   }) as any
 
@@ -142,6 +144,19 @@ export function ProductForm({ initialData, categories, onSuccess }: ProductFormP
                   ))}
                 </SelectContent>
               </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="imageUrl"
+          render={({ field }: { field: any }) => (
+            <FormItem>
+              <FormLabel>Image URL</FormLabel>
+              <FormControl>
+                <Input placeholder="https://example.com/image.png" {...field} />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}

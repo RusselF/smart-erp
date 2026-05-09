@@ -10,6 +10,7 @@ export declare class ProductsController {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;
@@ -29,6 +30,7 @@ export declare class ProductsController {
             updatedAt: Date;
             sku: string;
             description: string | null;
+            imageUrl: string | null;
             price: number;
             stock: number;
             categoryId: string | null;
@@ -54,6 +56,7 @@ export declare class ProductsController {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;
@@ -65,6 +68,7 @@ export declare class ProductsController {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;
@@ -76,6 +80,7 @@ export declare class ProductsController {
         updatedAt: Date;
         sku: string;
         description: string | null;
+        imageUrl: string | null;
         price: number;
         stock: number;
         categoryId: string | null;

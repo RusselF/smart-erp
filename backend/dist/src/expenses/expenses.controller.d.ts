@@ -20,24 +20,24 @@ export declare class ExpensesController {
     }>;
     findAll(page?: string, limit?: string, startDate?: string, endDate?: string): Promise<{
         data: ({
+            user: {
+                name: string;
+            } | null;
             category: {
                 id: string;
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
             };
-            user: {
-                name: string;
-            } | null;
         } & {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            amount: number;
             description: string;
-            date: Date;
             categoryId: string;
             userId: string | null;
+            date: Date;
+            amount: number;
         })[];
         meta: {
             total: number;
@@ -47,24 +47,24 @@ export declare class ExpensesController {
         };
     }>;
     create(data: CreateExpenseDto, req: any): Promise<{
+        user: {
+            name: string;
+        } | null;
         category: {
             id: string;
             name: string;
             createdAt: Date;
             updatedAt: Date;
         };
-        user: {
-            name: string;
-        } | null;
     } & {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        amount: number;
         description: string;
-        date: Date;
         categoryId: string;
         userId: string | null;
+        date: Date;
+        amount: number;
     }>;
     remove(id: string): Promise<{
         success: boolean;

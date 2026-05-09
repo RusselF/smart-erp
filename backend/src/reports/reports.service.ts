@@ -6,13 +6,11 @@ export class ReportsService {
   constructor(private prisma: PrismaService) {}
 
   async getProfitLoss(startDate?: string, endDate?: string) {
-    let dateFilter = {};
+    let dateFilter: any = undefined;
     if (startDate && endDate) {
       dateFilter = {
-        createdAt: {
-          gte: new Date(startDate),
-          lte: new Date(endDate + 'T23:59:59.999Z'),
-        }
+        gte: new Date(startDate),
+        lte: new Date(endDate + 'T23:59:59.999Z'),
       };
     }
 
@@ -21,7 +19,7 @@ export class ReportsService {
       _sum: { totalAmount: true },
       where: {
         status: 'COMPLETED',
-        ...(startDate && endDate ? { createdAt: dateFilter['createdAt'] } : {}),
+        ...(dateFilter ? { createdAt: dateFilter } : {}),
       }
     });
     const totalRevenue = revenueResult._sum.totalAmount || 0;
@@ -36,7 +34,7 @@ export class ReportsService {
       _sum: { totalAmount: true },
       where: {
         status: 'RECEIVED',
-        ...(startDate && endDate ? { createdAt: dateFilter['createdAt'] } : {}),
+        ...(dateFilter ? { createdAt: dateFilter } : {}),
       }
     });
     const totalPurchases = purchasesResult._sum.totalAmount || 0;

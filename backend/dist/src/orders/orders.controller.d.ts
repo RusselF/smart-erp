@@ -12,6 +12,7 @@ export declare class OrdersController {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;
@@ -69,6 +70,7 @@ export declare class OrdersController {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;

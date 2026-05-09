@@ -23,6 +23,7 @@ export declare class PurchasesService {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;
@@ -109,6 +110,7 @@ export declare class PurchasesService {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;
@@ -153,6 +155,7 @@ export declare class PurchasesService {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;

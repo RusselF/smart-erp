@@ -119,8 +119,12 @@ export default function PosClient({ initialProducts, categories }: any) {
                 className={`p-4 cursor-pointer transition-all hover:shadow-md border-transparent hover:border-primary/20 ${product.stock <= 0 ? 'opacity-50 grayscale' : ''}`}
                 onClick={() => addToCart(product)}
               >
-                <div className="aspect-square bg-slate-100 rounded-lg mb-3 flex items-center justify-center">
-                  <Package className="w-8 h-8 text-slate-300" />
+                <div className="aspect-square bg-slate-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+                  {product.imageUrl ? (
+                    <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <Package className="w-8 h-8 text-slate-300" />
+                  )}
                 </div>
                 <h3 className="font-semibold text-sm line-clamp-2 min-h-[40px]">{product.name}</h3>
                 <div className="mt-2 flex flex-col gap-1.5 items-start">
@@ -153,8 +157,12 @@ export default function PosClient({ initialProducts, categories }: any) {
             <div className="space-y-4">
               {cart.map(item => (
                 <div key={item.id} className="flex gap-3 pb-4 border-b">
-                  <div className="w-12 h-12 bg-slate-100 rounded flex items-center justify-center shrink-0">
-                    <Package className="w-5 h-5 text-slate-400" />
+                  <div className="w-12 h-12 bg-slate-100 rounded flex items-center justify-center shrink-0 overflow-hidden">
+                    {item.imageUrl ? (
+                      <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <Package className="w-5 h-5 text-slate-400" />
+                    )}
                   </div>
                   <div className="flex-1">
                     <h4 className="text-sm font-semibold leading-tight">{item.name}</h4>

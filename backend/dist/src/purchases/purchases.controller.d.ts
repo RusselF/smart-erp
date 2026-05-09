@@ -22,6 +22,7 @@ export declare class PurchasesController {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;
@@ -105,6 +106,7 @@ export declare class PurchasesController {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;
@@ -149,6 +151,7 @@ export declare class PurchasesController {
                 updatedAt: Date;
                 sku: string;
                 description: string | null;
+                imageUrl: string | null;
                 price: number;
                 stock: number;
                 categoryId: string | null;
